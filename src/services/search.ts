@@ -2,7 +2,10 @@ import axios, { CancelTokenSource } from 'axios'
 import { SetStateAction } from 'react'
 import { ISearchApiRes } from '../types/search.d'
 
-const SEARCH_BASE_URL = '/B551182/diseaseInfoService/getDissNameCodeList'
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy'
+
+const SEARCH_BASE_URL = `${PROXY}/B551182/diseaseInfoService/getDissNameCodeList`
+
 const API_KEY = process.env.REACT_APP_DISEASE_API_KEY
 
 const getDiseasesNameOptions = {
