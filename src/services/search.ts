@@ -10,7 +10,7 @@ const API_KEY = process.env.REACT_APP_DISEASE_API_KEY
 
 const getDiseasesNameOptions = {
   ServiceKey: API_KEY,
-  pageNo: 1,
+  numOfRows: 50,
   sickType: 1,
   medTp: 2,
   diseaseType: 'SICK_NM',
