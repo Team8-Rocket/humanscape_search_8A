@@ -26,7 +26,7 @@ export const getDiseasesName = (
   if (call) call.cancel('cancel')
   call = axios.CancelToken.source()
   setCount((prev: number) => prev + 1)
-  console.log(count + 1)
+  // console.log(count + 1)
   return axios
     .get<ISearchApiRes>(SEARCH_BASE_URL, {
       cancelToken: call.token,
@@ -44,7 +44,7 @@ export const getDiseasesName = (
     })
     .catch((thrown) => {
       if (axios.isCancel(thrown)) {
-        console.log(`%c Request ${thrown.message}`, 'background: #bd71ff; color:#eaeaea')
+        // console.log(`%c Request ${thrown.message}`, 'background: #bd71ff; color:#eaeaea')
       }
     })
 }
