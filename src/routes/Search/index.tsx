@@ -25,7 +25,7 @@ const Search = () => {
     () => getDiseasesName(debouncedSearchText, searchCount, setSearchCount),
 
     {
-      enabled: debouncedSearchText !== '',
+      enabled: !!debouncedSearchText,
       refetchOnWindowFocus: false,
       staleTime: 1000 * 60 * 5,
     }
@@ -63,7 +63,7 @@ const Search = () => {
         온라인으로 참여하기
       </p>
 
-      <div className={styles.searchInputWarrper}>
+      <form className={styles.searchInputWrapper}>
         <SearchIcon className={styles.searchIcon} />
         <input
           className={styles.searchInput}
@@ -76,7 +76,7 @@ const Search = () => {
         <button type='button' className={styles.searchButton}>
           검색
         </button>
-      </div>
+      </form>
 
       {debouncedSearchText && <List data={data} isLoading={isLoading} />}
     </div>
