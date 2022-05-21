@@ -9,6 +9,7 @@ const App = () => {
       <div className={styles.app}>
         <Routes>
           <Route path='/' element={<Search />} />
+          <Route path='*' element={<div>Not Found</div>} />
         </Routes>
       </div>
     </div>
