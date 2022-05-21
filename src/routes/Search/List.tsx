@@ -4,7 +4,7 @@ import ListItem from './ListItem'
 
 import { IItem } from '../../types/search.d'
 
-import styles from './list.module.scss'
+import styles from './List.module.scss'
 
 interface Props {
   data: IItem[] | undefined | void
