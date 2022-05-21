@@ -5,13 +5,11 @@ import Search from 'routes/Search'
 
 const App = () => {
   return (
-    <div className={styles.appWrapper}>
-      <div className={styles.app}>
-        <Routes>
-          <Route path='/' element={<Search />} />
-          <Route path='*' element={<div>Not Found</div>} />
-        </Routes>
-      </div>
+    <div className={styles.app}>
+      <Routes>
+        <Route path='/' element={<Search />} />
+        <Route path='*' element={<div>404</div>} />
+      </Routes>
     </div>
   )
 }
