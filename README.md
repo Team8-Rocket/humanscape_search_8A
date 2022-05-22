@@ -29,31 +29,34 @@
 
 ## 구현 방법
 ### 추천 리스트 출력
-> * input 창에 searchText 입력 시 custom hook에서 setTimeout으로 디바운싱 처리 하여 redux 스토어에 저장 - api 호출이 text 입력이 변경될 때 마다 일어나지 않도록 하기 위해 디바운싱 
+> * input 창에 searchText 입력 시 custom hook에서 setTimeout으로 디바운싱 처리 하여 redux 스토어에 저장 - api 호출이 text 입력이 변경될 때 마다 일어나지 않도록 하기 위해 디바운싱. 
 redux 스토어에 새로운 debouncedSearchText가 저장되면 react-query useQuery내에서 api 호출 함수 실행, api 호출 count state와 setCount를 함께 전달
-> * 캐싱을 간편히 구현하기 위해  useQuery 사용
+> * 캐싱을 간편히 구현하기 위해 useQuery 사용
 > * api 호출 시 axios cancel 토큰을 생성하도록 설정하여, 이미 토큰을 가지고 있을 경우 이전 호출 취소 - input text를 변경하여도 이전 호출이 계속 이뤄지는 것은 자원 낭비라고 생각하여 중도에 cancel 
 > * cancel 토큰이 없다면 api 호출 setCount((prev) prev + 1) 이후 console로 count 출력 후 api 호출 실행
 > * .then() 에서 response 데이터 형식에 따라 데이터 처리 - array로 올 경우 바로 리턴, object 형식으로 올 경우 배열 형식으로 리턴하여 map으로 처리할 수 있게 함
 > * .catch() 에서 오류 처리, cancel() 실행 시 처리
-> * useQuery 캐싱을 이용하기 위해 staleTime: 1분, enabled 설정 
-> * data가 있을 시 useMemo 내부 map으로 list를 리턴받아 페이지에 출력
+> * useQuery 캐싱을 이용하기 위해 staleTime: 5분, 검색어가 있을 때만 api를 호출하도록 enabled 설정 
 
 ### 키보드만으로 검색어 이동
 > * useRef로 포커싱 될 대상 찾기 -> 인풋 / 다른 태그들은 눈에 보여지는게 없거나 ref로 사용하기 애매한것들이라서 input으 input태그에서만 이벤트가 나올 수 있도록 정함
-> * useState로 index를 만들고 -1으로 해둔다. => map  함수에서 생성되는 index와 대조하기 위해서
+> * useState로 index를 만들고 -1으로 해둔다. => map 함수에서 생성되는 index와 대조하기 위해서
 > * 아래 화살표를 누르면 index에 1씩 더해준다 -> event.code === ‘ArrowDown’
-> * 위 화살표 키를 누르면 index에 1씩 빼준다-> event.code === ‘ArrowUp’
+> * 위 화살표 키를 누르면 index에 1씩 빼준다 -> event.code === ‘ArrowUp’
 // keyCode는 사용이 권장되지 않는다. key 혹은 code로 사용하는것을 권장한다.
-> * itemList의 맵함수에서 생성된 index와 useState로 만들어진 index를 대조해 둘이 일치할 경우 active 클래스를 부여한다=> active 함수가 부여 된 경우 백그라운드에 컬러표시가 진행됨
+
+> * itemList의 map 함수에서 생성된 index와 useState로 만들어진 index를 대조해 둘이 일치할 경우 active 클래스를 부여한다 => active 클래스가 부여 된 경우 백그라운드에 컬러표시
 > * 마지막 list item에서 아래 화살표를 누르면 index를 다시 0으로 만들어 제일 위 item으로 올라갈 수 있도록 한다.
 > * 처음 list item에서 위 화살표를 누르면 index를 item.length -1을 뺀 만큼으로 만들어 맨 아래 아이템으로 갈 수 있도록 한다.
 > * searchText = 검색어가 들어올 때마다 index를 -1로 배치해 키보드 이벤트가 일어나야만 active가 보이도록 한다. =>인풋에서 키보드를 내려야 첫번째 아이템에 active가 들어와야 하는데 -1을 해주지 않으면 처음부터 첫번째 아이템에 active가 보이기 때문
 > * data가 없을 경우 함수가 실행되지 않도록 함
 > * 엔터 입력 시 searchText를 active된 list의 value로 변경 -> 새로운 api호출
 > * 인풋에 한글로 검색하면 처음에 두번 튀는 현상이 보였다.(keyCode === 229 이슈) Composing이 끝났을 경우만 함수가 실행되도록 event.nativeEvent.isComposinng 인 경우로 해결하였음.
+
+
 ### 검색어와 일치하는 검색결과 부분 볼드 처리
-> * 검색어 출력 list 내부에서 debouncedSearchText로 split하여 debouncedSearchText에 볼드 처리, 볼드 처리된 텍스트 앞에 split된 list[0], 텍스트 뒤에 list[1]을 붙여 출력
+> * 검색어 출력 list 내부에서 debouncedSearchText로 split하여 debouncedSearchText에 볼드 처리, 볼드 처리된 텍스트 앞에 split된 list[0], 텍스트 뒤에 list[1]을 붙여 출력.
+> * 강조하는 부분은 mark 태그를 이용하였음.
 
 
 
@@ -64,7 +67,7 @@ redux 스토어에 새로운 debouncedSearchText가 저장되면 react-query use
 
 ### 설치 방법
 1. 명령어 창에 git clone https://github.com/Team8-Rocket/humanscape_search_8A/tree/main 하여 클론 받는다.
-2. yarn install or npm install로 package다운 받는다.
+2. yarn install or npm install로 package를 다운 받는다.
 3. yarn start or npm run start로 실행한다.
 
 ## 개선점 
