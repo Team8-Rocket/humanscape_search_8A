@@ -1,6 +1,6 @@
 import { IItem } from '../../types/search.d'
 
-import styles from './List.module.scss'
+import styles from './ListItem.module.scss'
 import { SearchIcon } from 'assets/svgs'
 import { useAppDispatch, useAppSelector, useEffect } from 'hooks'
 import classNames from 'classnames'
