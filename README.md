@@ -6,18 +6,14 @@
 |[**김승원**](https://github.com/lumpenop)|[**유승완**](https://github.com/Seung-wan)|[**이주이**](https://github.com/jui9266)|[**홍성우**](https://github.com/hsw824)
 
 
-
 ## 기술 스택
-<img src="https://img.shields.io/badge/React-007396?style=for-the-badge&logo=React&logoColor=white">18.1.0 
+<img src="https://img.shields.io/badge/React-007396?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=TypeScript&logoColor=white"> <img src="https://img.shields.io/badge/Redux-toolkit-7F42C3?style=for-the-badge&logo=Redux-toolkit&logoColor=white"> <img src="https://img.shields.io/badge/React-Query-007396?style=for-the-badge&logo=React-Query&logoColor=white"> <img src="https://img.shields.io/badge/yarn-2783B3?style=for-the-badge&logo=yarn&logoColor=white">
 
-<img src="https://img.shields.io/badge/TypeScript-E34F26?style=for-the-badge&logo=TypeScript&logoColor=white">4.4.2 
-
-<img src="https://img.shields.io/badge/Redux-toolkit-E34F26?style=for-the-badge&logo=Redux-toolkit&logoColor=white">8.0.1 
-
-<img src="https://img.shields.io/badge/React-Query-E34F26?style=for-the-badge&logo=React-Query&logoColor=white">3.39.0 
-
-<img src="https://img.shields.io/badge/yarn-E34F26?style=for-the-badge&logo=yarn&logoColor=white">1.22.17
-
+> * React 18.1.0
+> * TypeScript 4.4.2
+> * Redux-toolkit 1.8.1
+> * React-Query 3.39.0
+> * yarn 1.22.17
 
 ## 구현 방식
 > 5월 20일 : 전체적인 ui 구성   
