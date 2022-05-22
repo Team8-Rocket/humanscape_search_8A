@@ -9,9 +9,13 @@
 
 ## 기술 스택
 <img src="https://img.shields.io/badge/React-007396?style=for-the-badge&logo=React&logoColor=white">18.1.0 
+
 <img src="https://img.shields.io/badge/TypeScript-E34F26?style=for-the-badge&logo=TypeScript&logoColor=white">4.4.2 
+
 <img src="https://img.shields.io/badge/Redux-toolkit-E34F26?style=for-the-badge&logo=Redux-toolkit&logoColor=white">8.0.1 
+
 <img src="https://img.shields.io/badge/React-Query-E34F26?style=for-the-badge&logo=React-Query&logoColor=white">3.39.0 
+
 <img src="https://img.shields.io/badge/yarn-E34F26?style=for-the-badge&logo=yarn&logoColor=white">1.22.17
 
 
