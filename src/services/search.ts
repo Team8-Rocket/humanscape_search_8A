@@ -10,7 +10,7 @@ const API_KEY = process.env.REACT_APP_DISEASE_API_KEY
 
 const getDiseasesNameOptions = {
   ServiceKey: API_KEY,
-  numOfRows: 50,
+  pageNo: 1,
   sickType: 1,
   medTp: 2,
   diseaseType: 'SICK_NM',
@@ -26,7 +26,8 @@ export const getDiseasesName = (
   if (call) call.cancel('cancel')
   call = axios.CancelToken.source()
   setCount((prev: number) => prev + 1)
-  // console.log(count + 1)
+  // eslint-disable-next-line no-console
+  console.log(count + 1)
   return axios
     .get<ISearchApiRes>(SEARCH_BASE_URL, {
       cancelToken: call.token,

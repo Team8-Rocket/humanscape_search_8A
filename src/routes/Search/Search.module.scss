@@ -5,7 +5,12 @@
   width: 100vw;
   height: 100vh;
   padding: 50px 20px;
-  background-color: #d1e8fd;
+  background-color: #cae9ff;
+}
+
+.mainContainer {
+  width: 35vw;
+  margin: 0 auto;
 }
 
 .description {
@@ -20,8 +25,6 @@
 .searchInputWrapper {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-top: 30px;
   border-radius: 1.5rem;
   box-shadow: 0 5px 5px #1e20251a;
