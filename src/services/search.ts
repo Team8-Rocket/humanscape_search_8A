@@ -1,5 +1,6 @@
 import axios, { CancelTokenSource } from 'axios'
 import { SetStateAction } from 'react'
+
 import { ISearchApiRes } from '../types/search.d'
 
 const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy'
@@ -18,6 +19,7 @@ const getDiseasesNameOptions = {
 }
 
 let call: CancelTokenSource
+
 export const getDiseasesName = (
   searchText: string,
   count: number,
@@ -45,7 +47,8 @@ export const getDiseasesName = (
     })
     .catch((thrown) => {
       if (axios.isCancel(thrown)) {
-        // console.log(`%c Request ${thrown.message}`, 'background: #bd71ff; color:#eaeaea')
+        // eslint-disable-next-line no-console
+        console.log(`%c Request ${thrown.message}`, 'background: #bd71ff; color:#eaeaea')
       }
     })
 }

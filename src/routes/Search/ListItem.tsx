@@ -1,10 +1,10 @@
-import { IItem } from '../../types/search.d'
-
-import styles from './ListItem.module.scss'
-import { SearchIcon } from 'assets/svgs'
-import { useAppDispatch, useAppSelector, useEffect } from 'hooks'
 import classNames from 'classnames'
+import { useEffect, useAppDispatch, useAppSelector } from 'hooks'
+
+import { SearchIcon } from 'assets/svgs'
 import { setActiveIndex, setSearchText, setSelectedSearchText } from 'states/search'
+import { IItem } from '../../types/search.d'
+import styles from './ListItem.module.scss'
 
 interface Props {
   diseaseItem: IItem

@@ -1,5 +1,7 @@
 import { TailSpin } from 'react-loader-spinner'
+
 import ListItem from './ListItem'
+
 import { IItem } from '../../types/search.d'
 import styles from './List.module.scss'
 

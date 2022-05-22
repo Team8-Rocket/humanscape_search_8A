@@ -1,21 +1,22 @@
 import { ChangeEvent, KeyboardEvent, FormEvent } from 'react'
 import { useQuery } from 'react-query'
 import { useEffect, useRef, useAppSelector, useQueryDebounce, useAppDispatch, useState } from 'hooks'
+
+import List from './List'
+import { SearchIcon } from 'assets/svgs'
 import { getDiseasesName } from 'services/search'
+import { setActiveIndex, setSearchText } from 'states/search'
 
 import styles from './Search.module.scss'
-import { SearchIcon } from 'assets/svgs'
-import List from './List'
-import { setActiveIndex, setSearchText } from 'states/search'
 
 const Search = () => {
   const debouncedSearchText = useAppSelector((state) => state.disease.debouncedText)
   const activeIndex = useAppSelector((state) => state.disease.activeIndex)
   const searchText = useAppSelector((state) => state.disease.searchText)
   const selectedSearchText = useAppSelector((state) => state.disease.selectedSearchText)
-  const [isOpen, setIsOpen] = useState<boolean>(true)
   const dispatch = useAppDispatch()
 
+  const [isOpen, setIsOpen] = useState<boolean>(true)
   const [searchCount, setSearchCount] = useState<number>(0)
 
   const divRef = useRef<HTMLDivElement>(null)
