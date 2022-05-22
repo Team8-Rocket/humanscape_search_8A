@@ -16,7 +16,7 @@
 > * yarn 1.22.17
 
 ## 데모 페이지
-[데모 페이지] https://humanscape-8a.netlify.app/
+[데모 페이지](https://humanscape-8a.netlify.app/)
 
 ## 구현 방식
 > 5월 20일 : 전체적인 ui 구성   
