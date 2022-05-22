@@ -18,10 +18,10 @@ const Search = () => {
 
   const [searchCount, setSearchCount] = useState<number>(0)
 
-  const formRef = useRef<HTMLDivElement>(null)
+  const divRef = useRef<HTMLDivElement>(null)
 
   const clickOutside = (event: MouseEvent) => {
-    if (!formRef.current?.contains(event.target as Node)) {
+    if (!divRef.current?.contains(event.target as Node)) {
       setIsOpen(false)
     }
   }
@@ -87,7 +87,7 @@ const Search = () => {
         </h1>
       </header>
       <main>
-        <div className={styles.mainContainer} ref={formRef}>
+        <div className={styles.mainContainer} ref={divRef}>
           <form className={styles.searchInputWrapper} onSubmit={handleSearchSubmit}>
             <SearchIcon className={styles.searchIcon} />
             <input
