@@ -7,7 +7,7 @@
 
 
 ## 기술 스택
-<img src="https://img.shields.io/badge/React-007396?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=TypeScript&logoColor=white"> <img src="https://img.shields.io/badge/Redux-toolkit-7F42C3?style=for-the-badge&logo=Redux-toolkit&logoColor=white"> <img src="https://img.shields.io/badge/React-Query-007396?style=for-the-badge&logo=React-Query&logoColor=white"> <img src="https://img.shields.io/badge/yarn-2783B3?style=for-the-badge&logo=yarn&logoColor=white">
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=TypeScript&logoColor=white"> <img src="https://img.shields.io/badge/Redux-toolkit-7F42C3?style=for-the-badge&logo=Redux-toolkit&logoColor=white"> <img src="https://img.shields.io/badge/React-Query-007396?style=for-the-badge&logo=React-Query&logoColor=white"> <img src="https://img.shields.io/badge/yarn-2783B3?style=for-the-badge&logo=yarn&logoColor=white">
 
 > * React 18.1.0
 > * TypeScript 4.4.2
