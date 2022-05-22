@@ -7,8 +7,7 @@ export const useQueryDebounce = (value: string, delay = 600) => {
   useEffect(() => {
     const handler: NodeJS.Timeout = setTimeout(() => {
       if (value) {
-        // eslint-disable-next-line no-console
-        console.log('호출되었습니다')
+        // console.log('호출되었습니다')
         dispatch(setDebouncedText(replacedValue))
       }
     }, delay)

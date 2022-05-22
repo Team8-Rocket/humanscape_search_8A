@@ -8,6 +8,7 @@ export interface DiseaseState {
   debouncedText: string
   activeIndex: number
   searchText: string
+  selectedSearchText: string
 }
 
 const INITIAL_STATE: DiseaseState = {
@@ -15,6 +16,7 @@ const INITIAL_STATE: DiseaseState = {
   debouncedText: '',
   activeIndex: -1,
   searchText: '',
+  selectedSearchText: '',
 }
 
 const diseaseSlice = createSlice({
@@ -33,10 +35,14 @@ const diseaseSlice = createSlice({
     setSearchText: (state: DiseaseState, action: PayloadAction<string>) => {
       state.searchText = action.payload
     },
+    setSelectedSearchText: (state: DiseaseState, action: PayloadAction<string>) => {
+      state.selectedSearchText = action.payload
+    },
   },
 })
 
-export const { setDiseaseList, setDebouncedText, setActiveIndex, setSearchText } = diseaseSlice.actions
+export const { setDiseaseList, setDebouncedText, setActiveIndex, setSearchText, setSelectedSearchText } =
+  diseaseSlice.actions
 
 export default diseaseSlice.reducer
 
@@ -46,3 +52,4 @@ export const getDiseaseList = (state: RootState): IItem[] => state.disease.disea
 export const getDebouncedText = (state: RootState): string => state.disease.debouncedText
 export const getActiveIndex = (state: RootState): number => state.disease.activeIndex
 export const getSearchText = (state: RootState): string => state.disease.searchText
+export const getSelectedSearchText = (state: RootState): string => state.disease.selectedSearchText
