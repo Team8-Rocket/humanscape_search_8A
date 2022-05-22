@@ -1,0 +1,28 @@
+@use '/src/styles/constants/colors';
+
+.active {
+  background-color: colors.$GRAYE;
+}
+
+li {
+  display: flex;
+  padding: 10px 0;
+  margin-top: 8px;
+
+  .itemButton {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.searchIcon {
+  width: 16px;
+  margin-right: 5px;
+  fill: #2d3d50;
+}
+
+.highlight {
+  font-weight: bold;
+  color: colors.$BLUE;
+  background-color: transparent;
+}

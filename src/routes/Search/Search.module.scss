@@ -1,0 +1,92 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/responsive';
+
+.searchContainer {
+  width: 100vw;
+  height: 100vh;
+  padding: 50px 20px;
+  background-color: #cae9ff;
+}
+
+.mainContainer {
+  width: 35vw;
+  margin: 0 auto;
+}
+
+.description {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  text-align: center;
+  letter-spacing: -0.018em;
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  margin-top: 30px;
+  border-radius: 1.5rem;
+  box-shadow: 0 5px 5px #1e20251a;
+
+  svg {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 1rem;
+    width: 16px;
+    fill: #2d3d50;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  height: 3rem;
+  padding: 0 0 0 2.5rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  border-radius: 42px;
+}
+
+.searchButton {
+  display: none;
+}
+
+@include responsive.after(MD) {
+  .description {
+    font-size: 2.125rem;
+    line-height: 1.6;
+    letter-spacing: -0.018em;
+  }
+
+  .searchInputWrapper {
+    max-width: 560px;
+    margin: auto;
+    margin-top: 16px;
+    border-radius: 42px;
+    box-shadow: none;
+
+    .searchInput {
+      height: 64px;
+      border-radius: 42px 0 0 42px;
+    }
+
+    .searchButton {
+      display: inline-block;
+      width: 7rem;
+      height: 64px;
+      padding: 0 1rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: colors.$WHITE;
+      letter-spacing: 3px;
+      letter-spacing: -0.018em;
+      background-color: #347ae1;
+      border-radius: 0 42px 42px 0;
+    }
+
+    svg {
+      bottom: 1.4rem;
+      left: 1rem;
+    }
+  }
+}
